@@ -20,8 +20,10 @@ var app = express();
  app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
- app.use("/images", express.static(path.join(__dirname, 'images')));
-app.use('/', indexRouter);
+ app.use('/', indexRouter);
+app.listen(process.env.PORT||3000,()=>{
+  console.log("haho al server")
+})
 
 app.get("/init_chat/",(req,res)=>{
     con.connect(function(err) {
