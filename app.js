@@ -21,7 +21,7 @@ var app = express();
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
  app.use('/', indexRouter);
-app.listen(process.env.PORT||3000,()=>{
+app.listen(3306,()=>{
   console.log("haho al server")
 })
 
